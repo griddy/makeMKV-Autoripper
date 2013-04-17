@@ -5,7 +5,7 @@
 
 sudo add-apt-repository ppa:stebbins/handbrake-releases
 sudo apt-get update
-sudo apt-get install python build-essential libc6-dev libssl-dev libexpat1-dev libgl1-mesa-dev libqt4-dev g++ python-imdbpy handbrake-cli
+sudo apt-get install python build-essential libc6-dev libssl-dev libexpat1-dev libgl1-mesa-dev libqt4-dev g++ python-imdbpy handbrake-cli checkinstall
 
 cd /tmp/
 wget "http://www.makemkv.com/download/"
@@ -26,11 +26,11 @@ tar -xzvf $oss_zip
 
 cd $oss_folder
 make -f makefile.linux
-sudo make -f makefile.linux install
+sudo checkinstall make -f makefile.linux install
 
 cd ../$bin_folder
 make -f makefile.linux
-sudo make -f makefile.linux install
+sudo checkinstall make -f makefile.linux install
 
 cd ..
 
